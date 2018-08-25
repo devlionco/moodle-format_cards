@@ -22,7 +22,7 @@
  * @copyright  2012 Marina Glancy
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$string['pluginname'] = 'הצגת תמונות';
+$string['pluginname'] = 'יחידות הוראה בתמונות';
 
 $string['addsection'] = 'להוסיף יחידה';
 $string['addsubsection'] = 'Add subsection';
