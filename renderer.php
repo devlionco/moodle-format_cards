@@ -364,7 +364,7 @@ class format_cards_renderer extends plugin_renderer_base {
               $pinendcount++;
             }
           }
-          if ($pinendcount) echo html_writer::tag('li', '', array('class'=>'section', 'style'=>'width: '. 20*(4-$pinendcount).'%'));
+          // if ($pinendcount) echo html_writer::tag('li', '<div class = "summary"></div>', array('class'=>'section', 'style'=>'width: '. 20*(4-$pinendcount).'%'));
 
           $sectioncounter = 1;
           foreach ($sections as $section) {
