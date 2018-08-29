@@ -60,7 +60,6 @@ class format_cards_renderer extends plugin_renderer_base {
             // For Moodle 3.1 or later use inplace editable for displaying section name.
             $section = course_get_format($course)->get_section($section);
             return $this->render(course_get_format($course)->inplace_editable_render_section_name($section, !$supresslink));
-            // echo '<pre>'.print_r($title,1).'</pre>'; exit();
         }
         $title = get_section_name($course, $section);
         if (!$supresslink) {
@@ -364,7 +363,7 @@ class format_cards_renderer extends plugin_renderer_base {
               $pinendcount++;
             }
           }
-          // if ($pinendcount) echo html_writer::tag('li', '<div class = "summary"></div>', array('class'=>'section', 'style'=>'width: '. 20*(4-$pinendcount).'%'));
+          if ($pinendcount) echo html_writer::tag('li', '<div class = "summary"></div>', array('class'=>'section', 'style'=>'width: '. 20*(4-$pinendcount).'%'));
 
           $sectioncounter = 1;
           foreach ($sections as $section) {

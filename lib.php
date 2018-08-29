@@ -868,20 +868,20 @@ class format_cards extends format_base {
         // }
 
         // Set marker
-        // if ($sectionnum && has_capability('moodle/course:setcurrentsection', $context)) {
-        //     $setmarkerurl = course_get_url($course, $sr);
-        //     if ($course->marker == $section->section) {
-        //         $marker = 0;
-        //         $text = new lang_string('removemarker', 'format_cards');
-        //         $class = 'marked';
-        //     } else {
-        //         $marker = $section->section;
-        //         $text = new lang_string('setmarker', 'format_cards');
-        //         $class = 'marker';
-        //     }
-        //     $setmarkerurl->params(array('marker' => $marker, 'sesskey' => sesskey()));
-        //     $controls[] = new format_cards_edit_control($class, $setmarkerurl, $text);
-        // }
+        if ($sectionnum && has_capability('moodle/course:setcurrentsection', $context)) {
+            $setmarkerurl = course_get_url($course, $sr);
+            if ($course->marker == $section->section) {
+                $marker = 0;
+                $text = new lang_string('removemarker', 'format_cards');
+                $class = 'marked';
+            } else {
+                $marker = $section->section;
+                $text = new lang_string('setmarker', 'format_cards');
+                $class = 'marker';
+            }
+            $setmarkerurl->params(array('marker' => $marker, 'sesskey' => sesskey()));
+            $controls[] = new format_cards_edit_control($class, $setmarkerurl, $text);
+        }
 
         // Set pin (mark section as persitent/pinned)
         if ($sectionnum && has_capability('moodle/course:update', $context)) {
