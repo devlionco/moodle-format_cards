@@ -189,7 +189,7 @@ class format_cards_renderer extends plugin_renderer_base {
 
         // display controls except for expanded/collapsed
         $controls = course_get_format($course)->get_section_edit_controls($section, $sr);
-        $leftcontent = $this->section_left_content($section, $course, $onsectionpage);
+        $leftcontent = $this->section_left_content($section, $course, false); // set $onsectionpage to false as here we have no section pages
         echo html_writer::tag('div', $leftcontent, array('class' => 'left side'));
         $collapsedcontrol = null;
         $pincontrol = '';
@@ -376,9 +376,10 @@ class format_cards_renderer extends plugin_renderer_base {
           echo html_writer::end_tag('ul');
       }
 
-      if ($addsectioncontrol = course_get_format($course)->get_add_section_control($sectionnum) and $sectionnum == 0) {
-        echo $this->render($addsectioncontrol);
-      }
+    // this code is for adding subsections - here we have no subsections in format_cards
+    //   if ($addsectioncontrol = course_get_format($course)->get_add_section_control($sectionnum) and $sectionnum == 0) {
+    //     echo $this->render($addsectioncontrol);
+    //   }
 
     }
 
