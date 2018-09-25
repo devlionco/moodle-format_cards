@@ -1,43 +1,552 @@
 /* stylelint-disable */
 .format-flexsections .course-content ul.flexsections {
-    margin: 0;
-    padding: 0;
-}
-.format-flexsections .course-content ul.flexsections li.section {list-style: none;margin:3px 0 2px 1em;padding-left:5px;padding-right:0;}
-.course-content ul.flexsections li.movehere {list-style: none;margin:3px 0 2px 1em;}
+  margin: 0;
+  padding: 0; }
+
+.format-flexsections .course-content ul.flexsections li.section {
+  list-style: none;
+  margin: 3px 0 2px 1em;
+  padding-left: 5px;
+  padding-right: 0; }
+
+.course-content ul.flexsections li.movehere {
+  list-style: none;
+  margin: 3px 0 2px 1em; }
+
 .dir-rtl.format-flexsections .course-content ul.flexsections li.section,
-.dir-rtl.course-content ul.flexsections li.movehere {margin:3px 1em 2px 0;}
-.format-flexsections .course-content ul.flexsections-level-0 > li.section {margin-left: 0;}
-.format-flexsections .course-content ul.flexsections-level-0 > li.movehere {margin-left: 0;}
-.format-flexsections .course-content ul.flexsections li.section.main {border:none;}
-.format-flexsections .course-content ul.flexsections-level-1 > li.section.main {border: #DDDDDD solid 1px;margin-left:0;padding-right:5px;}
-.format-flexsections .course-content ul.flexsections li.section .controls img {padding-left:0.3em;padding-right:0.3em}
-.format-flexsections .course-content ul.flexsections li.section .availabilityinfo {padding-bottom: .5em;}
-.format-flexsections .course-content ul.flexsections li.section ul.section {margin-left:0;margin-right:0;padding-left:0;}
-.format-flexsections .course-content ul.flexsections li.section > .content > .summary {margin-left:0;padding-left:0.2em;}
+.dir-rtl.course-content ul.flexsections li.movehere {
+  margin: 3px 1em 2px 0; }
+
+.format-flexsections .course-content ul.flexsections-level-0 > li.section {
+  margin-left: 0; }
+
+.format-flexsections .course-content ul.flexsections-level-0 > li.movehere {
+  margin-left: 0; }
+
+.format-flexsections .course-content ul.flexsections li.section.main {
+  border: none; }
+
+.format-flexsections .course-content ul.flexsections-level-1 > li.section.main {
+  border: #DDDDDD solid 1px;
+  margin-left: 0;
+  padding-right: 5px; }
+
+.format-flexsections .course-content ul.flexsections li.section .controls img {
+  padding-left: 0.3em;
+  padding-right: 0.3em; }
+
+.format-flexsections .course-content ul.flexsections li.section .availabilityinfo {
+  padding-bottom: .5em; }
+
+.format-flexsections .course-content ul.flexsections li.section ul.section {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0; }
+
+.format-flexsections .course-content ul.flexsections li.section > .content > .summary {
+  margin-left: 0;
+  padding-left: 0.2em; }
 
 /* Overwrite bootstrapbase styles */
 .format-flexsections .course-content ul.flexsections .controls a.hide,
-.format-flexsections .course-content ul.flexsections .controls a.show {display:inline;}
+.format-flexsections .course-content ul.flexsections .controls a.show {
+  display: inline; }
 
 /* hidden section */
 .format-flexsections .course-content li.section.hidden > .content > h3.sectionname,
 .format-flexsections .course-content li.section.hidden > .content > h3.sectionname a,
 .format-flexsections .course-content li.section.hidden > .content > .summary,
 .format-flexsections .course-content li.section.hidden .addresourcemodchooser a,
-.format-flexsections .course-content li.section.hidden a.addsection {color:#AAAAAA;}
+.format-flexsections .course-content li.section.hidden a.addsection {
+  color: #AAAAAA; }
 
 /* add extra borders in editing mode */
-.format-flexsections.editing .course-content ul.flexsections li.section.main {border: #DDDDDD solid 1px;}
-.format-flexsections.editing .course-content ul.flexsections li.section.main#section-0 {border: none;}
+.format-flexsections.editing .course-content ul.flexsections li.section.main {
+  border: #DDDDDD solid 1px; }
+
+.format-flexsections.editing .course-content ul.flexsections li.section.main#section-0 {
+  border: none; }
 
 /* moving section */
-.format-flexsections .course-content ul.flexsections li.section.ismoving {background:#EEEEEE;}
-.format-flexsections .course-content ul.flexsections li.movehere > img {padding-left:5px;}
-.format-flexsections .course-content div.cancelmoving {margin:3px;padding:5px;background:yellow;border:1px solid black;text-align:center;position:fixed;top:0;right:0;}
+.format-flexsections .course-content ul.flexsections li.section.ismoving {
+  background: #EEEEEE; }
 
-.format-flexsections .jumpmenu {text-align:center;}
+.format-flexsections .course-content ul.flexsections li.movehere > img {
+  padding-left: 5px; }
 
-.format-flexsections .header.backto {padding: 5px 10px;border: 1px solid #DDD;margin-bottom:5px;}
-.format-flexsections .header.backto .backto-text {margin-left:10px;}
+.format-flexsections .course-content div.cancelmoving {
+  margin: 3px;
+  padding: 5px;
+  background: yellow;
+  border: 1px solid black;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0; }
 
+.format-flexsections .jumpmenu {
+  text-align: center; }
+
+.format-flexsections .header.backto {
+  padding: 5px 10px;
+  border: 1px solid #DDD;
+  margin-bottom: 5px; }
+
+.format-flexsections .header.backto .backto-text {
+  margin-left: 10px; }
+
+.mod-indent-outer {
+  display: block; }
+
+.activityinstance {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+      flex-grow: 1; }
+
+.mod-indent > div {
+  width: 100%; }
+
+.mstatus {
+  margin-left: auto;
+  margin-right: 17px;
+  line-height: 39px;
+  font-weight: 600;
+  font-size: 18px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.mod_red {
+  color: red; }
+
+.mod_orange {
+  color: #FF8E4B; }
+
+.mod_gray {
+  font-weight: 400;
+  color: #3C3C3C; }
+
+.mod_complete {
+  width: 30px;
+  height: 40px;
+  background: url([[pix:format_cards|check]]) no-repeat center;
+  background-size: contain; }
+
+[dir="rtl"] .format-cards .course-content .section .content .wrapper-open .activities {
+  transform: translate(50%, -50%) !important; }
+
+.format-cards .section.main.current .content {
+  border: 2px solid #1177d1; }
+
+.format-cards .controls .hide {
+  display: inline-block; }
+
+.format-cards .controls .marker i {
+  margin: 0;
+  font-size: 16px;
+  width: unset;
+  margin-right: .5rem;
+  color: inherit; }
+
+.format-cards .section.main.current::before {
+  display: none; }
+
+.format-cards .section .activity.label .no-overflow {
+  display: block;
+  height: 62px;
+  overflow: hidden; }
+
+.format-cards .activities-empty {
+  margin: 50px;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #3c3c3c; }
+
+.format-cards .section .activity .availabilityinfo {
+  position: absolute;
+  top: 37px;
+  right: 35px; }
+
+.format-cards .course-content ul.section {
+  margin: 0; }
+
+.format-cards .sections .no-overflow,
+.format-cards .sections .actions {
+  display: none; }
+
+.format-cards .sections {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
+  padding: 0; }
+
+.format-cards .content .summary {
+  height: 118px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow: hidden;
+  cursor: pointer; }
+
+.format-cards .atto_image_button_text-top.img-responsive,
+.format-cards .atto_image_button_middle.img-responsive,
+.format-cards .atto_image_button_text-bottom.img-responsive {
+  width: 100%;
+  margin: 0;
+  max-width: unset; }
+
+.format-cards #region-main {
+  background: #f4f3f0; }
+  .format-cards #region-main .card.card-block {
+    background: none;
+    border: none;
+    margin: 18px auto 0; }
+
+.format-cards .notifications {
+  display: none; }
+
+.format-cards .course-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 1122px;
+  margin: 0 auto; }
+  .format-cards .course-content .topunit {
+    margin: 0 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -ms-flexbox;
+    display: flex;
+    width: calc(100% - 30px);
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    border-bottom: 1px solid #D5D5D4; }
+    .format-cards .course-content .topunit .topunit_name {
+      margin-right: auto;
+      color: #929191;
+      font-size: 24px;
+      font-weight: 600;
+      padding-bottom: 16px; }
+    .format-cards .course-content .topunit .topunit_btn {
+      position: relative;
+      border: none;
+      background: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: #3C3C3C;
+      padding-right: 40px; }
+      .format-cards .course-content .topunit .topunit_btn .closeall {
+        display: none; }
+    .format-cards .course-content .topunit .topunit_btn::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: url([[pix:format_cards|close_black]]) no-repeat center;
+      background-size: 16px; }
+    .format-cards .course-content .topunit .topunit_btn.section_opened .closeall {
+      display: inline-block; }
+    .format-cards .course-content .topunit .topunit_btn.section_opened .openall {
+      display: none; }
+    .format-cards .course-content .topunit .topunit_btn.section_opened::after {
+      background: url([[pix:format_cards|open_black]]) no-repeat center;
+      background-size: 34px; }
+  .format-cards .course-content .sections #section-0 {
+    height: auto;
+    width: 100%;
+    margin-bottom: 30px; }
+    .format-cards .course-content .sections #section-0 .content {
+      background: none;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .format-cards .course-content .sections #section-0 .content .summary {
+        height: auto; }
+      .format-cards .course-content .sections #section-0 .content .no-overflow {
+        display: block; }
+  .format-cards .course-content .sections > .section {
+    margin: 0;
+    margin-right: 22px;
+    margin-bottom: 25px;
+    width: 23%;
+    height: 264px;
+    list-style: none;
+    position: relative; }
+    .format-cards .course-content .sections > .section .content {
+      background: #FFFFFF;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+      height: 100%;
+      padding: 15px; }
+      .format-cards .course-content .sections > .section .content .wrapper {
+        display: none; }
+      .format-cards .course-content .sections > .section .content .summary {
+        width: 100%;
+        height: 124px;
+        background-size: cover;
+        margin-bottom: 5px;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
+      .format-cards .course-content .sections > .section .content .sectionicon {
+        display: none;
+        position: absolute;
+        left: 24px;
+        top: 110px;
+        width: 24px;
+        height: 24px;
+        background: url([[pix:format_cards|pushpin]]) no-repeat center;
+        background-size: 24px; }
+      .format-cards .course-content .sections > .section .content .sectionnumber {
+        position: absolute;
+        left: 24px;
+        top: 110px;
+        color: #FFFFFF;
+        font-size: 27px;
+        line-height: 24px;
+        font-weight: bold; }
+      .format-cards .course-content .sections > .section .content .section_wrap {
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+        padding: 8px 0 0; }
+        .format-cards .course-content .sections > .section .content .section_wrap .sectionname .inplaceeditable > span:first-child {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 230px; }
+        .format-cards .course-content .sections > .section .content .section_wrap .sectionname .inplaceeditable input {
+          width: 100%; }
+        .format-cards .course-content .sections > .section .content .section_wrap .sectionname a {
+          font-size: 24px; }
+          .format-cards .course-content .sections > .section .content .section_wrap .sectionname a:hover {
+            text-decoration: none; }
+      .format-cards .course-content .sections > .section .content .sectionprogress-wrapper {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0; }
+        .format-cards .course-content .sections > .section .content .sectionprogress-wrapper .sectionprogress {
+          background-color: #D5D5D4;
+          position: relative; }
+        .format-cards .course-content .sections > .section .content .sectionprogress-wrapper .sectionprogress-bar {
+          height: 4px;
+          background: #00db7c;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px; }
+        .format-cards .course-content .sections > .section .content .sectionprogress-wrapper .sectionprogress-percent {
+          display: none;
+          position: absolute;
+          font-size: 12px;
+          top: -20px;
+          width: 30px;
+          text-align: right; }
+      .format-cards .course-content .sections > .section .content .wrapper-open {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.5);
+        z-index: 1000; }
+        .format-cards .course-content .sections > .section .content .wrapper-open .activities {
+          margin: 0;
+          padding: 0;
+          display: block !important;
+          position: fixed;
+          background: white;
+          width: 80%;
+          right: auto;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1101;
+          max-height: 80%;
+          overflow: auto;
+          box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.3);
+          min-height: 50vh; }
+          .format-cards .course-content .sections > .section .content .wrapper-open .activities .add_activity {
+            margin-right: auto;
+            margin-left: 20px; }
+            .format-cards .course-content .sections > .section .content .wrapper-open .activities .add_activity .section-modchooser-text {
+              color: #fff;
+              font-size: 1.2rem;
+              font-weight: 600; }
+        .format-cards .course-content .sections > .section .content .wrapper-open .activity-header {
+          width: 100%;
+          height: 83px;
+          background: #0096DB;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+          -ms-flex-align: center;
+              align-items: center;
+          padding: 0 20px; }
+          .format-cards .course-content .sections > .section .content .wrapper-open .activity-header .header-title {
+            padding: 0;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF; }
+          .format-cards .course-content .sections > .section .content .wrapper-open .activity-header .header-btn-close {
+            width: 24px;
+            height: 24px;
+            border: none;
+            outline: none;
+            background: url([[pix:format_cards|close]]) no-repeat center;
+            background-size: 24px; }
+        .format-cards .course-content .sections > .section .content .wrapper-open .activity {
+          padding: 25px 20px;
+          border-bottom: 1px solid #e7e7e7; }
+          .format-cards .course-content .sections > .section .content .wrapper-open .activity .activityinstance {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+                align-items: center; }
+            .format-cards .course-content .sections > .section .content .wrapper-open .activity .activityinstance a {
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-align: center;
+                  align-items: center;
+              text-indent: unset;
+              padding: 0; }
+            .format-cards .course-content .sections > .section .content .wrapper-open .activity .activityinstance .activityicon {
+              width: 54px;
+              height: 54px;
+              margin-right: 32px; }
+            .format-cards .course-content .sections > .section .content .wrapper-open .activity .activityinstance .instancename {
+              margin-right: 48px;
+              font-size: 18px;
+              font-weight: bold;
+              color: #3C3C3C;
+              text-decoration: none;
+              text-indent: unset;
+              padding: 0; }
+  .format-cards .course-content .section.pinned .content {
+    border: 1px solid #0096DB; }
+    .format-cards .course-content .section.pinned .content .section_wrap {
+      background: #0096DB;
+      padding: 8px 6px 0; }
+      .format-cards .course-content .section.pinned .content .section_wrap .sectionnumber {
+        display: none; }
+      .format-cards .course-content .section.pinned .content .section_wrap .sectionicon {
+        display: block; }
+      .format-cards .course-content .section.pinned .content .section_wrap .sectionname {
+        color: #FFFFFF; }
+        .format-cards .course-content .section.pinned .content .section_wrap .sectionname a {
+          color: #FFFFFF;
+          text-decoration: none; }
+    .format-cards .course-content .section.pinned .content .sectionprogress-wrapper {
+      display: none; }
+
+.format-cards #section-0 .sectionprogress-wrapper {
+  display: none; }
+
+.format-cards ul.flexsections {
+  width: 100%; }
+
+.format-cards ul.flexsections.flexsections-level-0 {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.format-cards ul.flexsections.flexsections-level-1,
+.format-cards ul.flexsections.flexsections-level-2 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.format-cards.editing .course-content .sections > .section {
+  margin-bottom: 50px; }
+
+.format-cards.editing .course-content .sections > .section .content .sectionnumber,
+.format-cards.editing .course-content .sections > .section .content .sectionicon {
+  top: 150px; }
+
+.format-cards.editing .course-content > .mdl-right {
+  position: absolute;
+  top: 0;
+  left: 23px;
+  border: 1px solid #a7a7a7;
+  padding: 10px;
+  border-radius: 2px;
+  transition: .2s; }
+  .format-cards.editing .course-content > .mdl-right i {
+    margin-left: 0 !important; }
+
+.format-cards.editing .course-content .sections > .section {
+  height: auto; }
+
+.format-cards.editing .mdl-right {
+  text-align: left; }
+
+.format-cards.editing .sectionname {
+  position: relative; }
+  .format-cards.editing .sectionname input {
+    background-color: #fff;
+    position: relative;
+    z-index: 100; }
+
+.format-cards.editing .ignoredirty {
+  position: relative;
+  z-index: 100; }
+
+.format-cards.editing .course-content .sections > .section .content .wrapper-open .activity {
+  padding: 5px; }
+
+.format-cards.editing .activityinstance .inplaceeditable {
+  display: -ms-flexbox;
+  display: flex; }
+  .format-cards.editing .activityinstance .inplaceeditable.inplaceeditingon {
+    display: block; }
+
+.format-cards.editing .course-content .sections > .section .content .wrapper-open .activity .activityinstance .activityicon {
+  width: 40px; }
+
+.format-cards.editing .section .activity .availabilityinfo {
+  position: absolute;
+  top: 20px;
+  right: 42px; }
+
+.format-cards.editing .content a:first-of-type > .icon,
+.format-cards.editing .content span:first-of-type > .icon {
+  margin: 0;
+  margin-right: 5px; }
+
+.format-cards.editing .sectionprogress-wrapper {
+  display: none; }
+
+.format-cards.editing .section li.activity .actions {
+  display: inline-block;
+  margin-left: 30px; }
+
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+  .format-cards .sections {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; } }
+
+@media only screen and (max-width: 576px) {
+  .format-cards .sections {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr; } }
