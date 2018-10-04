@@ -61,12 +61,20 @@ $string['editimage'] = 'עדכון תמונה';
 // header blocks settings
 $string['displayunits'] = 'משבצת יחידות';
 $string['displayunitsdesc'] = 'משבצת יחידות';
+$string['displayunitsdesc_help'] = 'משבצת יחידות';
+$string['displayattendanceinfo'] = 'Display attendance info';
+$string['displayattendanceinfodesc'] = 'Show or hide block';
+$string['displayattendanceinfodesc_help'] = 'Show or hide block';
 $string['displaymessages'] = 'משבצת הודעות';
 $string['displaymessagesdesc'] = 'משבצת הודעות';
+$string['displaymessagesdesc_help'] = 'משבצת הודעות';
 $string['displaygrades'] = 'משבצת צלמיות';
 $string['displaygradesdesc'] = 'משבצת צלמיות';
+$string['displaygradesdesc_help'] = 'משבצת צלמיות';
 
 $string['showbagestag'] = 'צלמית מדליות';
 $string['showbagestagdesc'] = 'צלמית מדליות';
+$string['showbagestagdesc_help'] = 'צלמית מדליות';
 $string['showcertificatestag'] = 'צלמית תעודות';
 $string['showcertificatestagdesc'] = 'צלמית תעודות';
+$string['showcertificatestagdesc_help'] = 'צלמית תעודות';

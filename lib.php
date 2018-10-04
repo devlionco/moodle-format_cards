@@ -337,7 +337,9 @@ class format_cards extends format_base {
      * @return array of options
      */
     public function course_format_options($foreditform = false) {
+        global $DB;
         static $courseformatoptions = false;
+        $course = $this->get_course();
 
             $config = get_config('format_cards');
             $courseformatoptions = array(
@@ -351,7 +353,7 @@ class format_cards extends format_base {
                         )
                     ),
                     'help' => "displayunitsdesc",
-                    'help_component' => 'moodle',
+                    'help_component' => 'format_cards',
                 ),
                 'displaymessages' => array(
                     'label' => get_string('displaymessages', 'format_cards'),
@@ -363,7 +365,7 @@ class format_cards extends format_base {
                         )
                     ),
                     'help' => "displaymessagesdesc",
-                    'help_component' => 'moodle',
+                    'help_component' => 'format_cards',
                 ),
                 'displaygrades' => array(
                     'label' => get_string('displaygrades', 'format_cards'),
@@ -375,7 +377,7 @@ class format_cards extends format_base {
                         )
                     ),
                     'help' => "displaygradesdesc",
-                    'help_component' => 'moodle',
+                    'help_component' => 'format_cards',
                 ),
                 'showbagestag' => array(
                     'label' => get_string('showbagestag', 'format_cards'),
@@ -387,7 +389,7 @@ class format_cards extends format_base {
                         )
                     ),
                     'help' => "showbagestagdesc",
-                    'help_component' => 'moodle',
+                    'help_component' => 'format_cards',
                 ),
                 'showcertificatestag' => array(
                     'label' => get_string('showcertificatestag', 'format_cards'),
@@ -399,10 +401,27 @@ class format_cards extends format_base {
                         )
                     ),
                     'help' => "showcertificatestagdesc",
-                    'help_component' => 'moodle',
+                    'help_component' => 'format_cards',
                 )
             );
 
+        // define display or not "attendanceinfo show/hide setting"
+        $attmodid = $DB->get_record('modules', array('name' => 'attendance'), 'id')->id; // get attendance module id in system
+        $att = $DB->get_record('course_modules', array('course' => $course->id, 'module' => $attmodid, 'deletioninprogress' => 0), 'instance', IGNORE_MULTIPLE); // get first attedndance instance on current course
+        if ($att) {
+            $courseformatoptions['displayattendanceinfo'] = array(
+                    'label' => get_string('displayattendanceinfo', 'format_cards'),
+                    'element_type' => 'select',
+                    'element_attributes' => array(
+                        array(
+                            1 => new lang_string('yes'),
+                            0 => new lang_string('no'),
+                        )
+                    ),
+                    'help' => "displayattendanceinfodesc",
+                    'help_component' => 'format_cards',
+                );
+        }
 
         return $courseformatoptions;
     }

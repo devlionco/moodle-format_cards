@@ -64,14 +64,22 @@ $string['deleteimage'] = 'Delete file';
 // header blocks settings
 $string['displayunits'] = 'Display study units';
 $string['displayunitsdesc'] = 'Show or hide block';
+$string['displayunitsdesc_help'] = 'Show or hide block';
+$string['displayattendanceinfo'] = 'Display attendance info';
+$string['displayattendanceinfodesc'] = 'Show or hide block';
+$string['displayattendanceinfodesc_help'] = 'Show or hide block';
 $string['displaymessages'] = 'Display messages';
 $string['displaymessagesdesc'] = 'Show or hide block';
+$string['displaymessagesdesc_help'] = 'Show or hide block';
 $string['displaygrades'] = 'Display grades';
 $string['displaygradesdesc'] = 'Show or hide block';
+$string['displaygradesdesc_help'] = 'Show or hide block';
 
 $string['showbagestag'] = 'Display Badges block';
 $string['showbagestagdesc'] = 'Show or hide block';
+$string['showbagestagdesc_help'] = 'Show or hide block';
 $string['showcertificatestag'] = 'Display Certificates block';
 $string['showcertificatestagdesc'] = 'Show or hide block';
+$string['showcertificatestagdesc_help'] = 'Show or hide block';
 
 
