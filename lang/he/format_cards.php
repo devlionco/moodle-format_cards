@@ -58,6 +58,8 @@ $string['activities'] = ' > פעילויות';
 $string['noactivities'] = 'אין פעילויות';
 $string['editimage'] = 'עדכון תמונה';
 
+$string['toomanypinned'] = 'Too many pinned section. Only 4 sections could be pinned at the same time';
+
 // header blocks settings
 $string['displayunits'] = 'משבצת יחידות';
 $string['displayunitsdesc'] = 'משבצת יחידות';
