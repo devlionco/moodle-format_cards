@@ -346,7 +346,7 @@ class format_cards extends format_base {
         $defaultchoices = [3]; // By defaut - editingteacher role is defined.
         $helprolessection = array();
         $helprolessection['helpcontactroles_title'] = array(
-            'label' => get_string('helpcontactroles_label', 'format_picturelink'),
+            'label' => get_string('helpcontactroles_label', 'format_cards'),
             'element_type' => 'header',
         );
         foreach ($roles as $key => $value) { // Define roles list for help contact. 

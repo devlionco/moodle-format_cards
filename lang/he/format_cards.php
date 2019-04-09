@@ -80,3 +80,7 @@ $string['showbagestagdesc_help'] = 'צלמית מדליות';
 $string['showcertificatestag'] = 'צלמית תעודות';
 $string['showcertificatestagdesc'] = 'צלמית תעודות';
 $string['showcertificatestagdesc_help'] = 'צלמית תעודות';
+
+$string['helpcontactroles_label'] = 'Help contact roles';
+$string['helpcontactroles_desc'] = 'Help contact roles for the course';
+$string['helpcontactrolesdesc_help'] = 'Help contact roles for the course';
