@@ -84,4 +84,7 @@ $string['showcertificatestag'] = 'Display Certificates block';
 $string['showcertificatestagdesc'] = 'Show or hide block';
 $string['showcertificatestagdesc_help'] = 'Show or hide block';
 
+$string['helpcontactroles_label'] = 'Help contact roles';
+$string['helpcontactroles_desc'] = 'Help contact roles for the course';
+$string['helpcontactrolesdesc_help'] = 'Help contact roles for the course';
 
