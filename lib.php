@@ -349,20 +349,20 @@ class format_cards extends format_base {
             'label' => get_string('helpcontactroles_label', 'format_cards'),
             'element_type' => 'header',
         );
-        foreach ($roles as $key => $value) { // Define roles list for help contact. 
+        foreach ($roles as $key => $value) { // Define roles list for help contact.
             $helprolessection['helpcontactroles_'.$key] = array(
                 'label' => $value->localname,
                 'element_type' => 'advcheckbox',
                 'default' => in_array($value->id, $defaultchoices) ? 1 : 0,
                 'element_attributes' => array(
                     '',
-                    array('group' => 1), 
+                    array('group' => 1),
                     array(0, 1)
-                ), 
+                ),
                 'help_component' => 'format_cards',
             );
         }
-        
+
         $config = get_config('format_cards');
         $courseformatoptions = array(
             'displayunits' => array(
@@ -431,8 +431,6 @@ class format_cards extends format_base {
                 'element_type' => 'hidden'
             )
         );
-        
-        $courseformatoptions = array_merge_recursive($courseformatoptions, $helprolessection);
 
         // define display or not "attendanceinfo show/hide setting"
         $attmodid = $DB->get_record('modules', array('name' => 'attendance'), 'id')->id; // get attendance module id in system
@@ -452,6 +450,7 @@ class format_cards extends format_base {
                 );
         }
 
+        $courseformatoptions = array_merge_recursive($courseformatoptions, $helprolessection);
         return $courseformatoptions;
     }
 
@@ -540,8 +539,8 @@ class format_cards extends format_base {
         $sectionnum = $this->move_section($sectionnum, $parent, $before);
         return $sectionnum;
     }
-    
-    
+
+
     /**
      * Updates format options for a course
      *
@@ -551,14 +550,14 @@ class format_cards extends format_base {
      * @return bool whether there were any changes to the options values
      */
     public function update_course_format_options($data, $oldcourse = null) {
-        
+
         $data = $this->update_helpcontactroles($data);
 
         return $this->update_format_options($data);
     }
 
     /*
-     * Update helpcontactroles setting - implode all helpcontactroles settings in a string 
+     * Update helpcontactroles setting - implode all helpcontactroles settings in a string
      */
     protected function update_helpcontactroles($data) {
         $roles = array();
