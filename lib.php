@@ -341,74 +341,98 @@ class format_cards extends format_base {
         static $courseformatoptions = false;
         $course = $this->get_course();
 
-            $config = get_config('format_cards');
-            $courseformatoptions = array(
-                'displayunits' => array(
-                    'label' => get_string('displayunits', 'format_cards'),
-                    'element_type' => 'select',
-                    'element_attributes' => array(
-                        array(
-                            1 => new lang_string('yes'),
-                            0 => new lang_string('no'),
-                        )
-                    ),
-                    'help' => "displayunitsdesc",
-                    'help_component' => 'format_cards',
-                ),
-                'displaymessages' => array(
-                    'label' => get_string('displaymessages', 'format_cards'),
-                    'element_type' => 'select',
-                    'element_attributes' => array(
-                        array(
-                            1 => new lang_string('yes'),
-                            0 => new lang_string('no'),
-                        )
-                    ),
-                    'help' => "displaymessagesdesc",
-                    'help_component' => 'format_cards',
-                ),
-                'displaygrades' => array(
-                    'label' => get_string('displaygrades', 'format_cards'),
-                    'element_type' => 'select',
-                    'element_attributes' => array(
-                        array(
-                            1 => new lang_string('yes'),
-                            0 => new lang_string('no'),
-                        )
-                    ),
-                    'help' => "displaygradesdesc",
-                    'help_component' => 'format_cards',
-                ),
-                'showbagestag' => array(
-                    'label' => get_string('showbagestag', 'format_cards'),
-                    'element_type' => 'select',
-                    'element_attributes' => array(
-                        array(
-                            1 => new lang_string('yes'),
-                            0 => new lang_string('no'),
-                        )
-                    ),
-                    'help' => "showbagestagdesc",
-                    'help_component' => 'format_cards',
-                ),
-                'showcertificatestag' => array(
-                    'label' => get_string('showcertificatestag', 'format_cards'),
-                    'element_type' => 'select',
-                    'element_attributes' => array(
-                        array(
-                            1 => new lang_string('yes'),
-                            0 => new lang_string('no'),
-                        )
-                    ),
-                    'help' => "showcertificatestagdesc",
-                    'help_component' => 'format_cards',
-                ),
-                'nowpinned' => array (
-                    'type' => PARAM_INT,
-                    'default' => 0,
-                    'element_type' => 'hidden'
-                )
+        // Help contacts section
+        $roles = role_get_names(); // Get all system roles.
+        $defaultchoices = [3]; // By defaut - editingteacher role is defined.
+        $helprolessection = array();
+        $helprolessection['helpcontactroles_title'] = array(
+            'label' => get_string('helpcontactroles_label', 'format_picturelink'),
+            'element_type' => 'header',
+        );
+        foreach ($roles as $key => $value) { // Define roles list for help contact. 
+            $helprolessection['helpcontactroles_'.$key] = array(
+                'label' => $value->localname,
+                'element_type' => 'advcheckbox',
+                'default' => in_array($value->id, $defaultchoices) ? 1 : 0,
+                'element_attributes' => array(
+                    '',
+                    array('group' => 1), 
+                    array(0, 1)
+                ), 
+                'help_component' => 'format_cards',
             );
+        }
+        
+        $config = get_config('format_cards');
+        $courseformatoptions = array(
+            'displayunits' => array(
+                'label' => get_string('displayunits', 'format_cards'),
+                'element_type' => 'select',
+                'element_attributes' => array(
+                    array(
+                        1 => new lang_string('yes'),
+                        0 => new lang_string('no'),
+                    )
+                ),
+                'help' => "displayunitsdesc",
+                'help_component' => 'format_cards',
+            ),
+            'displaymessages' => array(
+                'label' => get_string('displaymessages', 'format_cards'),
+                'element_type' => 'select',
+                'element_attributes' => array(
+                    array(
+                        1 => new lang_string('yes'),
+                        0 => new lang_string('no'),
+                    )
+                ),
+                'help' => "displaymessagesdesc",
+                'help_component' => 'format_cards',
+            ),
+            'displaygrades' => array(
+                'label' => get_string('displaygrades', 'format_cards'),
+                'element_type' => 'select',
+                'element_attributes' => array(
+                    array(
+                        1 => new lang_string('yes'),
+                        0 => new lang_string('no'),
+                    )
+                ),
+                'help' => "displaygradesdesc",
+                'help_component' => 'format_cards',
+            ),
+            'showbagestag' => array(
+                'label' => get_string('showbagestag', 'format_cards'),
+                'element_type' => 'select',
+                'element_attributes' => array(
+                    array(
+                        1 => new lang_string('yes'),
+                        0 => new lang_string('no'),
+                    )
+                ),
+                'help' => "showbagestagdesc",
+                'help_component' => 'format_cards',
+            ),
+            'showcertificatestag' => array(
+                'label' => get_string('showcertificatestag', 'format_cards'),
+                'element_type' => 'select',
+                'element_attributes' => array(
+                    array(
+                        1 => new lang_string('yes'),
+                        0 => new lang_string('no'),
+                    )
+                ),
+                'help' => "showcertificatestagdesc",
+                'help_component' => 'format_cards',
+            ),
+            'nowpinned' => array (
+                'type' => PARAM_INT,
+                'default' => 0,
+                'element_type' => 'hidden'
+            )
+        );
+        
+        $courseformatoptions = array_merge_recursive($courseformatoptions, $helprolessection);
 
         // define display or not "attendanceinfo show/hide setting"
         $attmodid = $DB->get_record('modules', array('name' => 'attendance'), 'id')->id; // get attendance module id in system
@@ -516,6 +540,40 @@ class format_cards extends format_base {
         $sectionnum = $this->move_section($sectionnum, $parent, $before);
         return $sectionnum;
     }
+    
+    
+    /**
+     * Updates format options for a course
+     *
+     * @param stdClass|array $data return value from {@link moodleform::get_data()} or array with data
+     * @param stdClass $oldcourse if this function is called from {@link update_course()}
+     *     this object contains information about the course before update
+     * @return bool whether there were any changes to the options values
+     */
+    public function update_course_format_options($data, $oldcourse = null) {
+        
+        $data = $this->update_helpcontactroles($data);
+
+        return $this->update_format_options($data);
+    }
+
+    /*
+     * Update helpcontactroles setting - implode all helpcontactroles settings in a string 
+     */
+    protected function update_helpcontactroles($data) {
+        $roles = array();
+        foreach ($data as $key => $val) {
+            if ($val == '1') {
+                if (substr($key, 0, 17) === 'helpcontactroles_') {
+                    $num = substr($key, strpos($key, "_") + 1);
+                    $roles[] = $num;
+                }
+            }
+        }
+        $data->helpcontactroles = implode(',', $roles);
+        return $data;
+    }
+
 
     /**
      * Moves the section content to the parent section and deletes it
